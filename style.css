@@ -1,0 +1,20 @@
+.signupForm{
+    margin: 15px 30px;
+    padding: 10px 20px;
+}
+.inputForm{
+    width: 50%;
+    margin: 0 auto;
+    background-color: aqua ;
+    padding: 29px 38px;
+}
+.invalid-entry{
+    /* display: none;  */
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: .875em;
+    color: #ff0019;
+}
+.displayTable{
+    padding: 5px 15px;
+}

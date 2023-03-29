@@ -32,32 +32,28 @@
                     <input type="text" name="First name" required>
                 </label>
                 <label>
-                    Family name *
+                    Last name *
                     <input type="text" name="Family name" required>
                 </label>
             </div>
             <div class="two-cols">
                 <label>
-                    Citizenship
-                    <input type="text" name="Citizenship">
+                    Age *
+                    <input type="text" name="Age">
                 </label>
                 <label>
-                    Date of birth
-                    <input type="date" name="Date of birth">
+                    Gender *
+                    <input type="text" name="Gender">
                 </label>
             </div>
-            <label>
-                Address
-                <input type="text" name="Address">
-            </label>
             <div class="two-cols">
                 <label>
-                    ZIP Code
-                    <input type="text" name="ZIP">
+                    PIN Code
+                    <input type="text" name="PIN">
                 </label>
                 <label>
-                    City
-                    <input type="text" name="City">
+                    District
+                    <input type="text" name="District">
                 </label>
             </div>
             <div class="two-cols">
@@ -68,6 +64,12 @@
                 <label>
                     Email address *
                     <input type="email" name="Email" required>
+                </label>
+            </div>
+            <div class="two-cols">
+                <label>
+                    Password *
+                <input type="text" name="password" required>
                 </label>
             </div>
         </fieldset>

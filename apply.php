@@ -59,6 +59,12 @@
                     <input type="email" name="Email" value="<?php echo $_SESSION['Email_Address'];?>" required>
                 </label>
             </div>
+            <div class="two-cols">
+                <label>
+                    Password *
+                <input type="text" name="password" required>
+                </label>
+            </div>
         </fieldset>
         <div class="btns">
             <input type="text" name="_gotcha" value="" style="display:none;">

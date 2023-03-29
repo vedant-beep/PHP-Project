@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -29,45 +32,31 @@
             <div class="two-cols">
                 <label>
                     First name *
-                    <input type="text" name="First name" required>
+                    <input type="text" name="fname" value="<?php echo $_SESSION['First_Name'];?>" required>
                 </label>
                 <label>
-                    Family name *
-                    <input type="text" name="Family name" required>
+                    Last name *
+                    <input type="text" name="lname" value="<?php echo $_SESSION['Last_Name'];?>" required>
                 </label>
             </div>
-            <div class="two-cols">
-                <label>
-                    Citizenship
-                    <input type="text" name="Citizenship">
-                </label>
-                <label>
-                    Date of birth
-                    <input type="date" name="Date of birth">
-                </label>
-            </div>
-            <label>
-                Address
-                <input type="text" name="Address">
-            </label>
             <div class="two-cols">
                 <label>
                     ZIP Code
-                    <input type="text" name="ZIP">
+                    <input type="text" name="ZIP" value="<?php echo $_SESSION['Pin_Code'];?>">
                 </label>
                 <label>
                     City
-                    <input type="text" name="City">
+                    <input type="text" name="City" value="<?php echo $_SESSION['Distict'];?>">
                 </label>
             </div>
             <div class="two-cols">
                 <label>
                     Phone *
-                    <input type="tel" name="Phone" required>
+                    <input type="tel" name="Phone" value="<?php echo $_SESSION['Mobile_Number'];?>" required>
                 </label>
                 <label>
                     Email address *
-                    <input type="email" name="Email" required>
+                    <input type="email" name="Email" value="<?php echo $_SESSION['Email_Address'];?>" required>
                 </label>
             </div>
         </fieldset>

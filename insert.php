@@ -1,22 +1,7 @@
 <?php
 $insert = false;
 
-// Connect to the Database 
-
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "job";
-
-// Create a connection
-$conn = mysqli_connect($servername, $username, $password, $database);
-
-// Die if connection was not successful
-if (!$conn){
-    die("Sorry we failed to connect: ". mysqli_connect_error());
-}
-
+include('./_dbconnect.php');
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -36,8 +21,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
      $result = mysqli_query($conn, $sql);
 
      if ($result) {
-         echo "The record has been inserted successfully<br>";
+        session_start();
+        $_SESSION['First_Name'] = $First_Name;
+        $_SESSION['Last_Name'] = $Last_Name;
+        $_SESSION['Age'] = $Age;
+        $_SESSION['Gender'] = $Gender;
+        $_SESSION['Mobile_Number'] = $Mobile_Number;
+        $_SESSION['Email_Address'] = $Email_Address;
+        $_SESSION['Distict'] = $Distict;
+        $_SESSION['Pin_Code'] = $Pin_Code;
+        header('location: home.php?info=successfully_registered');
         $insert = true;
+        
 
      }
      else {

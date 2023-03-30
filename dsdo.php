@@ -24,6 +24,9 @@
 			<input type="date" id="application_deadline" name="application_deadline" required>
 
 			<input type="submit" value="Add Job" name="submit">
+			<form action="display_details.php">
+				<input type="submit" value="Display Applicant details" name="submit">
+			</form>
 		</form>
 	</div>
 </body>

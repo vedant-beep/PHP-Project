@@ -9,8 +9,3 @@ if (!$conn){
     die("Error". mysqli_connect_error());
 }
 ?>
-$conn = mysqli_connect($server, $email, $password, $database);
-if (!$conn){
-    die("Error". mysqli_connect_error());
-}
-?>

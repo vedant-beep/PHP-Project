@@ -5,18 +5,7 @@ $insert = false;
 // Connect to the Database 
 
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "job";
-
-// Create a connection
-$conn = mysqli_connect($servername, $username, $password, $database);
-
-// Die if connection was not successful
-if (!$conn) {
-    die("Sorry we failed to connect: " . mysqli_connect_error());
-}
+include("_dbconnect.php");
 
 if (isset($_POST['submit1'])) {
     $email = $_POST["email"];

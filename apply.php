@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    include "_dbconnect.php";
+    $sql = "SELECT * FROM `dsdo`";
+    $result = mysqli_query($conn, $sql);
+    
+?>
 <!doctype html>
 <html lang="en">
 
@@ -19,8 +26,14 @@
             <label>
                 Application for *
                 <select name="Application for" required>
-                    <option>Job A</option>
-                    <option>Job B</option>
+                <?php
+                        while($row = mysqli_fetch_assoc($result))
+                        {
+                        ?>
+                            <option value="<?php echo $row['job_id']; ?>"><?php echo $row['job_title']; ?></option>
+                        <?php
+                        }
+                    ?>
                 </select>
             </label>
         </fieldset>
@@ -29,41 +42,31 @@
             <div class="two-cols">
                 <label>
                     First name *
-                    <input type="text" name="First name" required>
+                    <input type="text" name="fname" value="<?php echo $_SESSION['First_Name'];?>" required>
                 </label>
                 <label>
                     Last name *
-                    <input type="text" name="Family name" required>
+                    <input type="text" name="lname" value="<?php echo $_SESSION['Last_Name'];?>" required>
                 </label>
             </div>
             <div class="two-cols">
                 <label>
-                    Age *
-                    <input type="text" name="Age">
+                    ZIP Code
+                    <input type="text" name="ZIP" value="<?php echo $_SESSION['Pin_Code'];?>">
                 </label>
                 <label>
-                    Gender *
-                    <input type="text" name="Gender">
-                </label>
-            </div>
-            <div class="two-cols">
-                <label>
-                    PIN Code
-                    <input type="text" name="PIN">
-                </label>
-                <label>
-                    District
-                    <input type="text" name="District">
+                    City
+                    <input type="text" name="City" value="<?php echo $_SESSION['Distict'];?>">
                 </label>
             </div>
             <div class="two-cols">
                 <label>
                     Phone *
-                    <input type="tel" name="Phone" required>
+                    <input type="tel" name="Phone" value="<?php echo $_SESSION['Mobile_Number'];?>" required>
                 </label>
                 <label>
                     Email address *
-                    <input type="email" name="Email" required>
+                    <input type="email" name="Email" value="<?php echo $_SESSION['Email_Address'];?>" required>
                 </label>
             </div>
             <div class="two-cols">

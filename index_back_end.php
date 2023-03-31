@@ -45,17 +45,17 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             $row = mysqli_fetch_assoc($result);
 
             if ($row['Email_Address'] === $email && $row['Password'] === $password) {
-
-                echo "Logged in!";
-                                        
-
-
-                 
+            
+                session_start();
                 $_SESSION['Email_Address'] = $row['Email_Address'];
 
-                $_SESSION['name'] = $row['name'];
+                $_SESSION['First_Name'] = $row['First_Name'];
+                $_SESSION['Last_Name'] = $row['Last_Name'];
+                $_SESSION['Pin_Code'] = $row['Pin_Code'];
+                $_SESSION['Distict'] = $row['Distict'];
+                $_SESSION['Mobile_Number'] = $row['Mobile_Number'];
 
-                $_SESSION['id'] = $row['id'];
+                $_SESSION['id'] = $row['Id'];
 
                 header("Location: home.php");
 
